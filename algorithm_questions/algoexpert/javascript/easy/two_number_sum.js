@@ -10,10 +10,18 @@
     target sum.
 
     You can assume that there will be at most one pair of numbers summing up to
-    the target sum.
+	the target sum.
+	
+	Sample Input:
+	array = [3, 5, -4, 8, 11, 1, -1, 6]
+	targetSum = 10
+
+	Sample Output:
+	[-1, 11] //this could be in reverse order
 */
 
-// Solution 1. O(n^2) time | O(1) space
+// Solution 1. 
+// O(n^2) time | O(1) space
 function twoNumberSum(array, targetSum) {
 	var firstNumPointer, secondNumPointer;
 	for (firstNumPointer = 0; firstNumPointer < array.length-1; ++firstNumPointer) {
@@ -24,10 +32,11 @@ function twoNumberSum(array, targetSum) {
 	}	
 }
 
-//Solution 2. O(n) time | O(n) space
+//Solution 2. 
+// O(n) time | O(n) space
 function twoNumberSum(array, targetSum) {
 	const valuesSeenInArray = {}
-  for (const num of array) {
+	for (const num of array) {
 		var matchingAddend = targetSum - num;
 		if (matchingAddend in valuesSeenInArray) {
 			return [matchingAddend, num]
