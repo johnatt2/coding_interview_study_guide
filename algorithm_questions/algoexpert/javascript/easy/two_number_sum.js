@@ -32,12 +32,12 @@ function twoNumberSum(array, targetSum) {
 	}	
 }
 
-//Solution 2. 
+// Solution 2. 
 // O(n) time | O(n) space
 function twoNumberSum(array, targetSum) {
 	const valuesSeenInArray = {}
 	for (const num of array) {
-		var matchingAddend = targetSum - num;
+		let matchingAddend = targetSum - num;
 		if (matchingAddend in valuesSeenInArray) {
 			return [matchingAddend, num]
 		}
